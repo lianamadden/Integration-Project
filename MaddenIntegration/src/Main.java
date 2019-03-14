@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-// ctrl shift f to format this code    
+// ctrl shift f to format this code       
 /*
  * 1. byte- Useful for saving memory in arrays Can be used in place of int. 
  * 2. short- Can be used to save things into large arrays 
