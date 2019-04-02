@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
  * Object precedence- order of operations
  */
 public class Main {
-
+	private static Scanner scanner = new Scanner(System.in);
 	// this is a header
 	// public is an access modifier
 	// void is the return type, meaning this method doesn't return anything
@@ -36,26 +36,28 @@ public class Main {
 				+ " Emergency Room. \nPatients will come in with different illnesses, disesases, and"
 				+ " injuries.\nYour decison making skills will either save the day or result in an untimely"
 				+ " death. \nChoose wisely; the lives of your patients are in your hands! \n \n"
-				+ "Liana: Let's make this official and give you a name. What should I call you?" + " Last name preferred.");
+				+ "Liana: Let's make this official and give you a name. What should I call you?"
+				+ " Last name preferred.");
 
-		Scanner scanner = new Scanner(System.in);
+
 		String doctorName = scanner.nextLine();
 
 		System.out.println("\nLiana: Hello Dr. " + doctorName + ", my name is Liana and I will be your nurse today.\n"
 				+ "\tWe're going to be spending a lot of time together so tell me a little about yourself.\n"
 				+ "\tHow old are you?");
-		
- 		// An integer is a number without a decimal
+
+		// An integer is a number without a decimal
 		int userAge = scanner.nextInt();
 
 		if (userAge <= 21) {
-			System.out.println("Liana: Wow! You're so young! I wish I was " + userAge + " again. You must be a genius!");
+			System.out
+					.println("Liana: Wow! You're so young! I wish I was " + userAge + " again. You must be a genius!");
 		} else if (userAge <= 55) {
 			System.out.println("Liana: Ah, what a good age. These are the best years! \n \tYou probably"
 					+ " know your way around by now but I'm here to help in whatever way i can!");
 		} else if (userAge <= 75) {
-			System.out
-					.println("Liana: You must be really wise at this age. I can probably learn" + " a thing or two from you.");
+			System.out.println(
+					"Liana: You must be really wise at this age. I can probably learn" + " a thing or two from you.");
 		} else {
 			System.out.println("Liana: What are you still doing here? Go retire and enjoy life, you workaholic!");
 		}
@@ -83,7 +85,7 @@ public class Main {
 		System.out.println(
 				"\tOkay, that's enough small talk. There are some strange things going on in this Emergency Room"
 						+ " tonight. \n \tI think we better get to work. There are 5 patients that we will be taking care"
-						+ " of."); 
+						+ " of.");
 		String doctorQuestion = ("");
 		int doctorAnswer = 0;
 		String chooseYes = "";
@@ -91,18 +93,20 @@ public class Main {
 		pickNewRoom(doctorQuestion, doctorAnswer, doctorName, chooseYes, chooseNo);
 	}
 
-	public static void pickNewRoom(String doctorQuestion, int doctorAnswer, String doctorName, String chooseYes, String chooseNo) {
+	public static void pickNewRoom(String doctorQuestion, int doctorAnswer, String doctorName, String chooseYes,
+			String chooseNo) {
 		System.out.println("\nWhat room would you like to head to?"
 				+ "\n(Enter a room number 1-5. Enter 6 if you wish to exit the program.)");
-		Scanner scanner = new Scanner(System.in);
 		int roomChoice = scanner.nextInt();
 		switch (roomChoice) {
 		case 1:
 			Room1 callRoom1 = new Room1();
-			Room1.room1Stuff(doctorName, doctorQuestion, doctorAnswer, chooseYes, chooseNo);
+			Room1.room1Stuff(doctorName, doctorQuestion, doctorAnswer, chooseYes, chooseNo, scanner);
 			// Room1.room1Stuff is the method
-			// The variables that are in the () are the arguments that are being passed to the method.
+			// The variables that are in the () are the arguments that are being passed to
+			// the method.
 			break;
+			// break makes the code skip the rest of the switch statement.
 		case 2:
 			Room2 callRoom2 = new Room2();
 			Room2.room2Stuff(doctorName, doctorQuestion, doctorAnswer, chooseYes, chooseNo);
@@ -127,23 +131,24 @@ public class Main {
 	}
 
 	public static int doctorInput(String doctorQuestion, int doctorAnswer, String chooseYes, String chooseNo) {
-		// public static int doctorInput is the header 
+		// public static int doctorInput is the header
 		// this includes the parameters that are in the ()
-		Scanner scanner = new Scanner(System.in);
+
 		System.out.println(doctorQuestion + "\n(Please choose a number.)");
 		doctorAnswer = scanner.nextInt();
 		doctorAnswer = inputReturn(doctorQuestion, doctorAnswer, chooseYes, chooseNo);
 		return doctorAnswer;
 
 	}
+
 	public static int inputReturn(String doctorQuestion, int doctorAnswer, String chooseRight, String chooseWrong) {
 		if (doctorAnswer == 1) {
 			System.out.println(chooseRight);
-		}else {
+		} else {
 			System.out.println(chooseWrong);
 			doctorAnswer = Main.doctorInput(doctorQuestion, doctorAnswer, chooseRight, chooseWrong);
 		}
 		return doctorAnswer;
-		
+
 	}
 }
