@@ -5,6 +5,7 @@
 import java.util.*;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import java.util.Arrays;
 
 // ctrl shift f to format this code       
 /*
@@ -38,7 +39,6 @@ public class Main {
 				+ " death. \nChoose wisely; the lives of your patients are in your hands! \n \n"
 				+ "Liana: Let's make this official and give you a name. What should I call you?"
 				+ " Last name preferred.");
-
 
 		String doctorName = scanner.nextLine();
 
@@ -95,8 +95,7 @@ public class Main {
 
 	public static void pickNewRoom(String doctorQuestion, int doctorAnswer, String doctorName, String chooseYes,
 			String chooseNo) {
-		System.out.println("\nWhat room would you like to head to?"
-				+ "\n(Enter a room number 1-5. Enter 6 if you wish to exit the program.)");
+		System.out.println("\nWhat room would you like to head to?" + "\n(Enter a room number 1 or 2)");
 		int roomChoice = scanner.nextInt();
 		switch (roomChoice) {
 		case 1:
@@ -106,25 +105,20 @@ public class Main {
 			// The variables that are in the () are the arguments that are being passed to
 			// the method.
 			break;
-			// break makes the code skip the rest of the switch statement.
+		// break makes the code skip the rest of the switch statement.
 		case 2:
 			Room2 callRoom2 = new Room2();
-			Room2.room2Stuff(doctorName, doctorQuestion, doctorAnswer, chooseYes, chooseNo);
+			Room2.room2Stuff(doctorName, doctorQuestion, doctorAnswer, chooseYes, chooseNo, scanner);
 			break;
-		case 3:
-			System.out.println("Follow me.");
-			break;
-		case 4:
-			System.out.println("This brings you to room stuff.");
-			break;
-		case 5:
-			System.out.println("The room is just around the corner. Follow me.");
-			break;
-		case 6:
-			System.out.println("Thank you for trying out my program! I hope you enjoyed yourself!");
-			System.exit(0);
 		default:
-			System.out.println("I'm sorry, another doctor is covering that room.");
+			System.out.println("I'm sorry, another doctor is covering that room. Here are some arrays and methods to keep you busy.");
+			//this code uses polymorphism to overload a method
+			Room2 overloadingExample = new Room2();
+		    overloadingExample.overload1(100, "Daenerys Targaryen");
+		    overloadingExample.overload1(10);
+		    
+		    //this calls a method with arrays
+		    makingArray();
 
 		}
 
@@ -151,4 +145,42 @@ public class Main {
 		return doctorAnswer;
 
 	}
+
+	public static void makingArray() {
+		int a = 0;
+		int oneArray[] = { 3, 6, 7, 2, 1, 4 };
+		for (int i : oneArray) { // enhanced for loop
+			for (int k = i + 1; k < 6; k++) {
+				if (oneArray[i] > oneArray[k]) {
+
+					a = oneArray[i];
+					oneArray[i] = oneArray[k];
+					oneArray[k] = a;
+				}
+			}
+		}
+		System.out.println("This is the smallest number in the array. \n" + oneArray[0]);
+		int sum = 0;
+		for (int b = 0; b < 6; b++) {
+			sum = sum + oneArray[b];
+		}
+		System.out.println("This is the sum of the array. \n" + sum);
+		
+		//System.out.println("The number 4 is at index" + findIndex(thisArray,4));
+		
+		ArrayList<String> names = new ArrayList<String>();
+		names.add("Liana");
+		names.add("Jon");
+		
+		for (int i = 0; i < names.size(); i++)
+		    System.out.println("Name:" + names.get(i));
+		
+		int[ ][ ] multiArray = new int[2][3];
+		System.out.println("This is the value at row 0 column 1: " + multiArray[0][1]);
+		
+		
+		
+		
+	}
+
 }

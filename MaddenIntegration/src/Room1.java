@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Room1 {
+	public int hearts;
 
 	public static void room1Stuff(String doctorName, String doctorQuestion, int doctorAnswer, String chooseRight,
 			String chooseWrong, Scanner scanner) {
