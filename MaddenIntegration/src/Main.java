@@ -81,10 +81,9 @@ public class Main {
       System.out.println("Liana: Very close... I'm " + ageFunInt + " years old!");
     }
 
-    System.out
-        .println("\tOkay, that's enough small talk. There are some strange things going on in this "
-            + "Emergency Room tonight. \n \tI think we better get to work. "
-            + "There are 5 patients that we will be taking care of.");
+    System.out.println("\tOkay, that's enough small talk. There are some strange things going "
+        + "on in this Emergency Room tonight. \n \tI think we better get to work. "
+        + "There are 5 patients that we will be taking care of.");
     String doctorQuestion = ("");
     int doctorAnswer = 0;
     String chooseYes = "";
