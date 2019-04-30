@@ -39,10 +39,10 @@ public class Main {
 
     String doctorName = scanner.nextLine();
 
-    System.out.println("\nLiana: Hello Dr. " + doctorName
-        + ", my name is Liana and I will be your nurse today.\n"
-        + "\tWe're going to be spending a lot of time together so tell me a little about "
-        + "yourself.\n \tHow old are you?");
+    System.out.println(
+        "\nLiana: Hello Dr. " + doctorName + ", my name is Liana and I will be your nurse today.\n"
+            + "\tWe're going to be spending a lot of time together so tell me a little about "
+            + "yourself.\n \tHow old are you?");
 
     // An integer is a number without a decimal
     int userAge = scanner.nextInt();
@@ -81,10 +81,10 @@ public class Main {
       System.out.println("Liana: Very close... I'm " + ageFunInt + " years old!");
     }
 
-    System.out.println(
-        "\tOkay, that's enough small talk. There are some strange things going on in this "
-        + "Emergency Room tonight. \n \tI think we better get to work. "
-        + "There are 5 patients that we will be taking care of.");
+    System.out
+        .println("\tOkay, that's enough small talk. There are some strange things going on in this "
+            + "Emergency Room tonight. \n \tI think we better get to work. "
+            + "There are 5 patients that we will be taking care of.");
     String doctorQuestion = ("");
     int doctorAnswer = 0;
     String chooseYes = "";
@@ -112,7 +112,7 @@ public class Main {
       default:
         System.out.println(
             "I'm sorry, another doctor is covering that room. Here are some arrays and methods "
-            + "to keep you busy.");
+                + "to keep you busy.");
         // this code uses polymorphism to overload a method
         Room2 overloadingExample = new Room2();
         overloadingExample.overload1(100, "Daenerys Targaryen");
