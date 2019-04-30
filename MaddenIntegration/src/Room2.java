@@ -5,8 +5,7 @@ import java.util.Scanner;
 // more onto it that is not part
 // of the parent class
 public class Room2 {
-  private int dragonGlass = 0;
-  private String character = "Daenerys Targaryen";
+ 
 
   public static void room2Stuff(String doctorName, String doctorQuestion, int doctorAnswer,
       String chooseRight, String chooseWrong, Scanner scanner) {
@@ -16,14 +15,18 @@ public class Room2 {
         + "Notes: Patient came by ambulance into the ER; unconcscious upon arrival. Stab wounds \n"
         + "located on upper torso. Pulse is flat. Patient isn't breathing.\n"
         + "\n\n------------------------------------------ \n"
-        + "We're going to play a series of games to determine if you save Jon Snow's life or if he dies");
+        + "We're going to play a series of games to determine if you save Jon Snow's life or if "
+        + "he dies");
 
     String[] characterArray =
         {"Viserys Targaryen", "Robert Baratheon", "Eddard Stark", "Khal Drogo"};
     System.out.println(
-        "What was the name of Daenerys's brother that dies from a golden crown?\n(First and Last Name)\n");
+        "What was the name of Daenerys's brother that dies from a golden crown?\n(First and "
+        + "Last Name)\n");
     String answer1 = scanner.nextLine();
     System.out.println(characterArray[0]);
+    System.out.println(answer1);
+    
 
   }
 

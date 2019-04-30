@@ -14,6 +14,7 @@ public class SuperExample extends Room1 {
 
   public int setter(int number) { // setter
     number = 3;
+    System.out.println(number);
     return number;
   }
 

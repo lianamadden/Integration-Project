@@ -14,11 +14,15 @@ import java.util.Scanner;
  * storing memory in large arrays Do NOT use for specifics like currency 6. double- Use for decimal
  * values Do NOT use for precise things like currency 7. boolean- true or false 8. char- single
  * character.
- * 
+ *
  * Variable- is a place holder that is waiting to be assigned Scope- is when a variable is only
  * acceptable in the method that it was declared.
  * 
  * Object precedence- order of operations
+ */
+/**
+ * @author Liana
+ *
  */
 public class Main {
   private static Scanner scanner = new Scanner(System.in);
@@ -27,6 +31,12 @@ public class Main {
   // void is the return type, meaning this method doesn't return anything
   // methods should be lowerCamelCase and be named with a verb
 
+  /**
+   * @param args
+   */
+  /**
+   * @param args
+   */
   public static void main(String[] args) {
 
     System.out.println("Welcome to my Integration Project!");
@@ -64,13 +74,12 @@ public class Main {
     System.out.println("\tI bet you can't guess how old I am...");
     // A final variable is variable that cannot be changed and is therefore is a
     // constant
-    final int NURSEAGE = 26;
+    final int NURSE_AGE = 26;
     int guessNurseAge = scanner.nextInt();
 
     // A boolean data type holds true or false.xx
     boolean ageGuess1 = true;
-    boolean ageGuess2 = false;
-    if (NURSEAGE == guessNurseAge) {
+      if (NURSE_AGE == guessNurseAge) {
       System.out.println(ageGuess1 + "! Wow, I'm surpised you got that.");
     } else {
       // double is a primitive data type that can hold decimal places
@@ -97,7 +106,6 @@ public class Main {
     int roomChoice = scanner.nextInt();
     switch (roomChoice) {
       case 1:
-        Room1 callRoom1 = new Room1();
         Room1.room1Stuff(doctorName, doctorQuestion, doctorAnswer, chooseYes, chooseNo, scanner);
         // Room1.room1Stuff is the method
         // The variables that are in the () are the arguments that are being passed to
@@ -105,7 +113,6 @@ public class Main {
         break;
       // break makes the code skip the rest of the switch statement.
       case 2:
-        Room2 callRoom2 = new Room2();
         Room2.room2Stuff(doctorName, doctorQuestion, doctorAnswer, chooseYes, chooseNo, scanner);
         break;
       default:
@@ -123,6 +130,9 @@ public class Main {
     }
 
   }
+
+
+
 
   public static int doctorInput(String doctorQuestion, int doctorAnswer, String chooseYes,
       String chooseNo) {
@@ -150,7 +160,7 @@ public class Main {
 
   public static void makingArray() {
     int a = 0;
-    int oneArray[] = {3, 6, 7, 2, 1, 4};
+    int [] oneArray = {3, 6, 7, 2, 1, 4};
     for (int i : oneArray) { // enhanced for loop
       for (int k = i + 1; k < 6; k++) {
         if (oneArray[i] > oneArray[k]) {
@@ -174,9 +184,9 @@ public class Main {
     names.add("Liana");
     names.add("Jon");
 
-    for (int i = 0; i < names.size(); i++)
+    for (int i = 0; i < names.size(); i++) {
       System.out.println("Name:" + names.get(i));
-
+    }
     int[][] multiArray = new int[2][3];
     System.out.println("This is the value at row 0 column 1: " + multiArray[0][1]);
 
