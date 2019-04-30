@@ -1,6 +1,7 @@
 // Liana Madden
 import java.util.Scanner;
 
+
 public class Room1 {
   public int hearts;
 
